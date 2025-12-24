@@ -1,4 +1,4 @@
-class LazyLoad {
+class Lazyload {
     #observer = null;
     #options = null;
 
@@ -382,4 +382,4 @@ class LazyLoad {
     }
 }
 
-export { LazyLoad };
+module.exports = Lazyload

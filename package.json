@@ -1,10 +1,10 @@
 {
   "name": "@ashcroft/lazyload",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publishConfig": {
     "access": "public"
   },
-  "description": "A package for lazyload image, videos, function call, etc.",
+  "description": "A lightweight JavaScript utility for lazyload images, videos, function call, and etc.",
   "keywords": [
     "lazyload",
     "image",
@@ -21,7 +21,7 @@
     "type": "git",
     "url": "git+https://github.com/neyaznafiz/ashcroft-lazyload.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "Neyaz Nafiz",
   "type": "commonjs",
   "main": "lazyload.js",
