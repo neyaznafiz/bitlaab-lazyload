@@ -264,7 +264,7 @@ lazy.executeFn({
 
 ```html
 <!-- ###########################################################
---------------------------- Styles ----------------------------#
+--------------------------- STYLES ----------------------------#
 ########################################################### -->
 <style>
     * { padding: 0; margin: 0; }
@@ -285,11 +285,11 @@ lazy.executeFn({
     }
 </style>
 
-<!-- ###########################################################
---------------------------- HTML ------------------------------#
-############################################################ -->
+<!-- ####################################################################
+-------------------------------- HTML ----------------------------------#
+##################################################################### -->
 
-<!-- --------------------- Image Elements ------------------ -->
+<!-- ------------------------ Image Elements ------------------------ -->
 <div id="image-wrapper" class="wrapper">
     <img class="lazy-img item" data-url="/images/demo-1.jpg" />
     <img class="lazy-img item" data-url="/images/demo-2.jpg" />
@@ -302,7 +302,7 @@ lazy.executeFn({
     <img class="lazy-img item" />
 </div>
 
-<!-- --------------------- Video Elements -------------------- -->
+<!-- ------------------------ Video Elements ------------------------ -->
 <div id="video-wrapper" class="wrapper">
     <video class="lazy-video item" data-url="/videos/demo-1.mp4"></video>
     <video class="lazy-video item" data-url="/videos/demo-2.mp4"></video>
@@ -315,17 +315,17 @@ lazy.executeFn({
     <video class="lazy-video item"></video>
 </div>
 
-<!-- ------------------- Function Element -------------------- -->
+<!-- ----------------------- Function Elements ---------------------- -->
 <div id="stats" class="wrapper"></div>
 
-<!-- ###########################################################
------------------------------ Script ----------------------------#
-########################################################### -->
+<!-- ####################################################################
+------------------------------- SCRIPT ---------------------------------#
+##################################################################### -->
 <script type="module">
     import Lazyload from "@ashcroft/lazyload";
     const lazy = new Lazyload();
 
-    // -------------------- Configuration ------------------------
+    // -------------------------- Configuration -------------------------
     // Most of the time you don't need this, the package internally
     // handle it. Only use when you want manual control.
     const config = {
@@ -334,7 +334,7 @@ lazy.executeFn({
         loadAfter: 0
     }
 
-    // ---------------------- Load Images -------------------------
+    // --------------------------- Load Images --------------------------
     lazy.loadImage({
         wrapper: "#image-wrapper"
         srcTarget: ".lazy-img",
@@ -356,7 +356,7 @@ lazy.executeFn({
         // Only use it when you want manual control.
     });
 
-    // ------------------------------ Load Videos ---------------------------------
+    // --------------------------- Load Videos --------------------------
     lazy.loadVideo({
         wrapper: "#video-wrapper"
         srcTarget: ".lazy-video",
@@ -378,7 +378,7 @@ lazy.executeFn({
         // Only use it when you want manual control.
     });
 
-    // --------------------------- Function Execution -----------------------------
+    // ------------------------ Function Execution ----------------------
     function apiCall() {
         const url = "https://jsonplaceholder.typicode.com/posts"
 
