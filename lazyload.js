@@ -135,7 +135,7 @@ class Lazyload {
                     if (typeof images[i] !== 'string') {
                         throw new Error('Failed to construct "LazyLoad": Image path must have to be a string!');
                     }
-                    else imgElements[i].dataset.imageUrl = images[i];
+                    else imgElements[i].dataset.url = images[i];
                 }
             }
         }
@@ -158,14 +158,14 @@ class Lazyload {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const srcElem = entry.target;
-                    console.log(srcElem.dataset);
                     const path = srcElem.dataset.url || null;
-                    console.log(path);
 
                     if (path) {
                         attr
                             ? srcElem.setAttribute(attr, path)
                             : srcElem.src = path
+                    } else {
+                        throw new Error('Failed to construct "LazyLoad": The url attribute name must have to be `data-url`!');
                     }
 
                     observer.unobserve(srcElem);
@@ -251,7 +251,7 @@ class Lazyload {
                     if (typeof videos[i] !== 'string') {
                         throw new Error('Failed to construct "LazyLoad": Video path must have to be a string!');
                     }
-                    else vdoElements[i].dataset.videoUrl = videos[i];
+                    else vdoElements[i].dataset.url = videos[i];
                 }
             }
         }
@@ -278,6 +278,8 @@ class Lazyload {
                         attr
                             ? srcElem.setAttribute(attr, path)
                             : srcElem.src = path
+                    } else {
+                        throw new Error('Failed to construct "LazyLoad": The url attribute name must have to be `data-url`!');
                     }
 
                     observer.unobserve(srcElem);
