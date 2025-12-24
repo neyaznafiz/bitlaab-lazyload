@@ -58,21 +58,10 @@ class Lazyload {
         };
     }
 
-    /**
-     * Loads an image lazily when the element containing the image
-     * comes into view.
-     * @param {Object} [options] - Options for the lazy load.
-     * @param {string} [options.selector] - The CSS selector to target
-     *   elements for lazy loading. The selector must be a valid
-     *   CSS selector. If not specified, an error is thrown.
-     * @param {string[]} [options.images] - An array of strings where each
-     *   string is a path to an image. If the array is empty, the image
-     *   will be loaded from the value of the `data-path` attribute of the
-     *   element. If the array is not empty, the image path is set to the
-     *   first element of the array. If the element of the array is not a
-     *   string, an error is thrown.
-     */
-    loadImage({
+    // #########################################################################
+    // # Load Images
+    // #########################################################################
+    image({
         wrapper = null,
         srcTarget = null,
         attr = null,
@@ -144,15 +133,9 @@ class Lazyload {
     }
 
 
-    /**
-     * Callback function for the IntersectionObserver that is called
-     * when an element (i.e. an image) comes into view.
-     * @param {IntersectionObserverEntry[]} entries - An array of
-     *   IntersectionObserverEntry objects that represent the elements
-     *   that have come into view.
-     * @param {IntersectionObserver} observer - The IntersectionObserver
-     *   that is watching the elements.
-     */
+    // #########################################################################
+    // # Render Images
+    // #########################################################################
     #renderImage(attr) {
         return (entries, observer) => {
             entries.forEach(entry => {
@@ -176,21 +159,10 @@ class Lazyload {
         }
     }
 
-    /**
-     * Loads a video lazily when the element containing the video
-     * comes into view.
-     * @param {Object} [options] - Options for the lazy load.
-     * @param {string} [options.selector] - The CSS selector to target
-     *   elements for lazy loading. The selector must be a valid
-     *   CSS selector. If not specified, an error is thrown.
-     * @param {string[]} [options.videos] - An array of strings where each
-     *   string is a path to a video. If the array is empty, the video
-     *   will be loaded from the value of the `data-path` attribute of the
-     *   element. If the array is not empty, the video path is set to the
-     *   first element of the array. If the element of the array is not a
-     *   string, an error is thrown.
-     */
-    loadVideo({
+    // #########################################################################
+    // # Load Videos
+    // #########################################################################
+    video({
         wrapper = null,
         srcTarget = null,
         attr = null,
@@ -261,14 +233,9 @@ class Lazyload {
         vdoElements.forEach(srcElem => { this.#observer.observe(srcElem); });
     }
 
-    /**
-     * The callback for IntersectionObserver when the video element enters the viewport.
-     * @param {string} [srcTarget] - The CSS selector of the element which holds the video path.
-     *   If null, the video path is set to the element itself.
-     * @param {string} [attr] - The attribute name of the element which holds the video path.
-     *   If null, the video path is set to the src attribute of the element.
-     * @returns {(entries: IntersectionObserverEntry[], observer: IntersectionObserver) => void} - The callback function for IntersectionObserver.
-     */
+    // #########################################################################
+    // # Render Videos
+    // #########################################################################
     #renderVideo(attr) {
         return (entries, observer) => {
             entries.forEach(entry => {
@@ -292,18 +259,10 @@ class Lazyload {
         }
     }
 
-    /**
-     * Executes a function lazily when the element containing the
-     * selector comes into view.
-     * @param {Object} [options] - Options for the lazy load.
-     * @param {string} [options.selector] - The CSS selector to target
-     *   elements for lazy loading. The selector must be a valid
-     *   CSS selector. If not specified, an error is thrown.
-     * @param {function} [options.exeFn] - The function to execute when
-     *   the element containing the selector comes into view. The
-     *   function must be a function. If not specified, an error is thrown.
-     */
-    executeFn({
+    // #########################################################################
+    // # Execute Function
+    // #########################################################################
+    execute({
         viewportEntry = null,
         exeFn = null,
         options = {

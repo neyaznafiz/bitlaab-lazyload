@@ -26,33 +26,24 @@ This is a modern, dependency-free vanilla JavaScript utility built on top of the
 
 ## 📦 Installation
 
-### **Package Manager**
-
 ```bash
 npm install @ashcroft/lazyload@latest
 ```
-or
+Or
 ```bash
 yarn add @ashcroft/lazyload@latest
 ```
-
-Usage
-
 ```js
 import Lazyload from "@ashcroft/lazyload";
 // or
 const Lazyload = require("@ashcroft/lazyload");
-
-const lazy = new Lazyload();
 ```
 
-### **CDN**
-
+Or import directly using **CDN**
 ```js
 import { Lazyload } from "https://unpkg.com/@ashcroft/lazyload/lazyload.js";
-
-const lazy = new Lazyload();
 ```
+
 
 ---
 
@@ -73,24 +64,33 @@ options: {
 | loadBefore | number | Margin before entering viewport |
 | loadAfter | number | Visibility ratio (0–1) |
 
+
+## Global Methods
+
+| Method    | Description |
+|-----------|------------------|
+| image()   | Load images when element will enter into the viewport. |
+| video()   | Load videos when element will enter into the viewport. |
+| execute() | Execute function when element will enter into the viewport. |
+
 ---
 
-## 🖼️ loadImage()
+## 🖼️ image()
 It will load images when item will enter into the viewport. the method accept 5 parameters:
-- **wrapper:** (Optional) - The `wrapper` of the `srcTarget`. The value of it is `CSS Selector`. </br>
+- **wrapper:** (Optional) - The wrapper of the `srcTarget`. The value of it is `CSS Selector`. </br>
 **e.g.,** `wrapper: "#image-wrapper"` </br> **Note:** If you don't provide the `wrapper` it will select all of the elements with the selector of `srcTarget` from `DOM`, otherwise it will select only from the `wrapper`. You can handle it on your needs.
 
-- **srcTarget:** (Required) - The `srcTarget` is the selector of the elements where the image `src` will be set. The value of it is `CSS Selector`. </br>
+- **srcTarget:** (Required) - The selector of the elements where the image `src` will be set. The value of it is `CSS Selector`. </br>
 **e.g.,** `srcTarget: ".lazy-img"`
 
-- **attr:** (Optional) - The `attr` is the attribute where image url will be set. If you use this parameter, the image url will be set into this attribute of the `srcTarget` element, otherwise it will set `src` attribute with the image url into the `srcTarget` element by default. </br>
+- **attr:** (Optional) - An attribute where image url will be set. If you use this parameter, the image url will be set into this attribute of the `srcTarget` element, otherwise it will set `src` attribute with the image url into the `srcTarget` element by default. </br>
 **e.g.,** `attr: "data-image"` </br>
 **result** `<img data-image="/demo-1.jpg" />`
 
-- **images:** (Optional) - The `images` is an array of string(image url). </br>
+- **images:** (Optional) - An array of string(image url). </br>
 **e.g.,** `images: [ "/demo-1.jpg", "/demo-2.jpg"]`
 
-- **options:** (Optional) - The `options` is the configuration of the lazyload. the value of it is an `object` with 3 properties and all are optional. </br>
+- **options:** (Optional) - The configuration of the lazyload. the value of it is an `object` with 3 properties and all are optional. </br>
 **e.g.,** `options: {root: null, loadBefore: 0, loadAfter: 0}`
 
 ### You can load image in two ways:
@@ -106,7 +106,9 @@ Setting the `image url` into an attribute called `data-lazy-url`
 ```
 
 ```js
-lazy.loadImage({
+const lazyload = new Lazyload();
+
+lazyload.image({
     wrapper: "#image-wrapper",
     srcTarget: ".lazy-img",
     options: { // Most of the time you don't need to set this parameter,
@@ -120,7 +122,7 @@ lazy.loadImage({
 ```
 
 #### Second Example
-Passing `images: []`(Array of image urls) parameter into the `loadImage()` function.
+Passing `images: []`(Array of image urls) parameter into the `lazyload.image()` function.
 
 ```html
 <div id="image-wrapper">
@@ -130,7 +132,9 @@ Passing `images: []`(Array of image urls) parameter into the `loadImage()` funct
 ```
 
 ```js
-lazy.loadImage({
+const lazyload = new Lazyload();
+
+lazyload.image({
     wrapper: "#image-wrapper",
     srcTarget: ".lazy-img",
     images: ["/demo-1.jpg", "/demo-2.jpg"],
@@ -146,22 +150,22 @@ lazy.loadImage({
 
 ---
 
-## 🎥 loadVideo()
+## 🎥 video()
 It will load videos when item will enter into the viewport. the method accept 5 parameters:
-- **wrapper:** (Optional) - The `wrapper` of the `srcTarget`. The value of it is `CSS Selector`. </br>
+- **wrapper:** (Optional) - The wrapper of the `srcTarget`. The value of it is `CSS Selector`. </br>
 **e.g.,** `wrapper: "#image-wrapper"` </br> **Note:** If you don't provide the `wrapper` it will select all of the elements with the selector of `srcTarget` from `DOM`, otherwise it will select only from the `wrapper`. You can handle it on your needs.
 
-- **srcTarget:** (Required) - The `srcTarget` is the selector of the elements where the video `src` will be set. The value of it is `CSS Selector`. </br>
+- **srcTarget:** (Required) - The selector of the elements where the video `src` will be set. The value of it is `CSS Selector`. </br>
 **e.g.,** `srcTarget: ".lazy-img"`
 
-- **attr:** (Optional) - The `attr` is the attribute where video url will be set. If you use this parameter, the video url will be set into this attribute of the `srcTarget` element, otherwise it will set `src` attribute with the video url into the `srcTarget` element by default. </br>
+- **attr:** (Optional) - The attribute where video url will be set. If you use this parameter, the video url will be set into this attribute of the `srcTarget` element, otherwise it will set `src` attribute with the video url into the `srcTarget` element by default. </br>
 **e.g.,** `attr: "data-video"` </br>
 **result** `<img data-video="/demo-1.mp4" />`
 
-- **videos:** (Optional) - The `videos` is an array of string(video url). </br>
+- **videos:** (Optional) - An array of string(video url). </br>
 **e.g.,** `videos: ["/demo-1.mp4", "/demo-2.mp4"]`
 
-- **options:** (Optional) - The `options` is the configuration of the lazyload. the value of it is an `object` with 3 properties and all are optional. </br>
+- **options:** (Optional) - The configuration of the lazyload. the value of it is an `object` with 3 properties and all are optional. </br>
 **e.g.,** `options: {root: null, loadBefore: 0, loadAfter: 0}`
 
 ### You can load videos in two ways:
@@ -177,7 +181,9 @@ Setting the `video url` into an attribute called `data-lazy-url`
 ```
 
 ```js
-lazy.loadVideo({
+const lazyload = new Lazyload();
+
+lazyload.video({
     wrapper: "#video-wrapper",
     srcTarget: ".lazy-video",
     options: { // Most of the time you don't need to set this parameter,
@@ -191,7 +197,7 @@ lazy.loadVideo({
 ```
 
 #### Second Example
-Passing `videos: []`(Array of video urls) parameter into the `loadVideo()` function.
+Passing `videos: []`(Array of video urls) parameter into the `lazyload.video()` function.
 
 ```html
 <div id="video-wrapper">
@@ -201,7 +207,9 @@ Passing `videos: []`(Array of video urls) parameter into the `loadVideo()` funct
 ```
 
 ```js
-lazy.loadVideo({
+const lazyload = new Lazyload();
+
+lazyload.video({
     wrapper: "#image-wrapper",
     srcTarget: ".lazy-video",
     videos: ["/demo-1.mp4", "/demo-2.mp4"],
@@ -217,16 +225,16 @@ lazy.loadVideo({
 
 ---
 
-## ⚙️ executeFn()
+## ⚙️ execute()
 It will execute function when `viewportEntry` element will enter into the viewport. the method accept 3 parameters:
 
 - **viewportEntry:** (Required) - The `viewportEntry` is the element where will be the function call, when the element enter into the viewport the function will be called. The value of it is `CSS Selector`. </br>
 **e.g.,** `viewportEntry: "#stats"`
 
-- **exeFn:** (Required) - The `exeFn`, the value of this parameter is a `function()` which will be execute. </br>
+- **exeFn:** (Required) - The value of this parameter is a `function()` which will be execute. </br>
 **e.g.,** `exeFn: () = {};`
 
-- **options:** (Optional) - The `options` is the configuration of the lazyload. the value of it is an `object` with 3 properties and all are optional. </br>
+- **options:** (Optional) - The configuration of the lazyload. the value of it is an `object` with 3 properties and all are optional. </br>
 **e.g.,** `options: {root: null, loadBefore: 0, loadAfter: 0}`
 
 ### Example
@@ -236,7 +244,9 @@ It will execute function when `viewportEntry` element will enter into the viewpo
 ```
 
 ```js
-lazy.executeFn({
+const lazyload = new Lazyload();
+
+lazyload.execute({
     viewportEntry: "#stats",
     exeFn: () => console.log("Visible"),
     options: { // Most of the time you don't need to set this parameter,
@@ -250,134 +260,6 @@ lazy.executeFn({
 ```
 
 ---
-
-## 💻 Usage
-
-**NOTE:** Replace the image and video urls with actual urls
-
-
-```html
-<!-- ###########################################################
---------------------------- STYLES ----------------------------#
-########################################################### -->
-<style>
-    * { padding: 0; margin: 0; }
-
-    .wrapper {
-        gap: 24px;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-    }
-
-    .item {
-        width: 200px;
-        height: 200px;
-        display: block;
-        object-fit: cover;
-    }
-</style>
-
-<!-- ####################################################################
--------------------------------- HTML ----------------------------------#
-##################################################################### -->
-
-<!-- ------------------------ Image Elements ------------------------ -->
-<div id="image-wrapper-1" class="wrapper">
-    <img class="lazy-img item" data-lazy-url="/demo-1.jpg" />
-    <img class="lazy-img item" data-lazy-url="/demo-2.jpg" />
-</div>
-
-<div id="image-wrapper-2" class="wrapper">
-    <img class="lazy-img item" />
-    <img class="lazy-img item" />
-</div>
-
-<!-- ------------------------ Video Elements ------------------------ -->
-<div id="video-wrapper-1" class="wrapper">
-    <video class="lazy-video item" data-lazy-url="/demo-1.mp4"></video>
-    <video class="lazy-video item" data-lazy-url="/demo-2.mp4"></video>
-</div>
-
-<div id="video-wrapper-2" class="wrapper">
-    <video class="lazy-video item"></video>
-    <video class="lazy-video item"></video>
-</div>
-
-<!-- ----------------------- Function Elements ---------------------- -->
-<div id="stats" class="wrapper"></div>
-
-<!-- ####################################################################
-------------------------------- SCRIPT ---------------------------------#
-##################################################################### -->
-<script type="module">
-    import Lazyload from "@ashcroft/lazyload";
-    const lazy = new Lazyload();
-
-    // -------------------------- Configuration -------------------------
-    // Most of the time you don't need this, the package internally
-    // handle it. Only use when you want manual control.
-    const config = {
-        root: null,
-        loadBefore: 0,
-        loadAfter: 0
-    }
-
-    // --------------------------- Load Images --------------------------
-    lazy.loadImage({
-        wrapper: "#image-wrapper-1",
-        srcTarget: ".lazy-img",
-        options: config // Most of the time you don't need to set this
-        // parameter, the package internally handle it.
-        // Only use when you want manual control.
-    });
-
-    lazy.loadImage({
-        wrapper: "#image-wrapper-2",
-        srcTarget: ".lazy-img",
-        images: ["/demo-1.jpg", "/demo-2.jpg"],
-        options: config // Most of the time you don't need to set this
-        // parameter, the package internally handle it.
-        // Only use it when you want manual control.
-    });
-
-    // --------------------------- Load Videos --------------------------
-    lazy.loadVideo({
-        wrapper: "#video-wrapper-1",
-        srcTarget: ".lazy-video",
-        options: config // Most of the time you don't need to set this
-        // parameter, the package internally handle it.
-        // Only use when you want manual control.
-    });
-
-    lazy.loadVideo({
-        wrapper: "#video-wrapper-2",
-        srcTarget: ".lazy-video",
-        videos: ["/demo-1.mp4", "/demo-2.mp4"],
-        options: config // Most of the time you don't need to set this
-        // parameter, the package internally handle it.
-        // Only use it when you want manual control.
-    });
-
-    // ------------------------ Function Execution ----------------------
-    async function apiCall() {
-        const url = "https://jsonplaceholder.typicode.com/posts"
-
-        const resp = await fetch(url);
-        const data = await resp.json();
-        console.log(data);
-    }
-
-    lazy.executeFn({
-        viewportEntry: "#stats",
-        exeFn: apiCall,
-        options: config // Most of the time you don't need to set this
-        // parameter, the package internally handle it.
-        // Only use it when you want manual control.
-    });
-</script>
-```
 
 ## 📄 License
 
