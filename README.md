@@ -101,7 +101,7 @@ Setting the `image url` into an attribute called `data-url`
 
 ```js
 lazy.loadImage({
-    wrapper: "#image-wrapper"
+    wrapper: "#image-wrapper",
     srcTarget: ".lazy-img",
     options: { // Most of the time you don't need to set this parameter,
     // the package internally handle it.
@@ -125,7 +125,7 @@ Passing `images: []`(Array of image urls) parameter into the `loadImage()` funct
 
 ```js
 lazy.loadImage({
-    wrapper: "#image-wrapper"
+    wrapper: "#image-wrapper",
     srcTarget: ".lazy-img",
     images: ["/images/demo-1.jpg", "/images/demo-2.jpg"],
     options: { // Most of the time you don't need to set this parameter,
@@ -178,7 +178,7 @@ Setting the `video url` into an attribute called `data-url`
 
 ```js
 lazy.loadVideo({
-    wrapper: "#video-wrapper"
+    wrapper: "#video-wrapper",
     srcTarget: ".lazy-video",
     options: { // Most of the time you don't need to set this parameter,
     // the package internally handle it.
@@ -208,7 +208,7 @@ Passing `videos: []`(Array of video urls) parameter into the `loadVideo()` funct
 
 ```js
 lazy.loadVideo({
-    wrapper: "#image-wrapper"
+    wrapper: "#image-wrapper",
     srcTarget: ".lazy-video",
     videos: ["/videos/demo-1.mp4", "/videos/demo-2.mp4"],
     options: { // Most of the time you don't need to set this parameter,
@@ -344,7 +344,7 @@ lazy.executeFn({
 
     // --------------------------- Load Images --------------------------
     lazy.loadImage({
-        wrapper: "#image-wrapper-1"
+        wrapper: "#image-wrapper-1",
         srcTarget: ".lazy-img",
         options: config // Most of the time you don't need to set this
         // parameter, the package internally handle it.
@@ -352,7 +352,7 @@ lazy.executeFn({
     });
 
     lazy.loadImage({
-        wrapper: "#image-wrapper-2"
+        wrapper: "#image-wrapper-2",
         srcTarget: ".lazy-img",
         images: ["/images/demo-1.jpg", "/images/demo-2.jpg"],
         options: config // Most of the time you don't need to set this
@@ -362,7 +362,7 @@ lazy.executeFn({
 
     // --------------------------- Load Videos --------------------------
     lazy.loadVideo({
-        wrapper: "#video-wrapper-1"
+        wrapper: "#video-wrapper-1",
         srcTarget: ".lazy-video",
         options: config // Most of the time you don't need to set this
         // parameter, the package internally handle it.
@@ -370,7 +370,7 @@ lazy.executeFn({
     });
 
     lazy.loadVideo({
-        wrapper: "#video-wrapper-2"
+        wrapper: "#video-wrapper-2",
         srcTarget: ".lazy-video",
         videos: ["/videos/demo-1.mp4", "/videos/demo-2.mp4"],
         options: config // Most of the time you don't need to set this
