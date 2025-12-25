@@ -39,7 +39,7 @@ import { Lazyload } from "@bitlaab/lazyload";
 
 Or import directly using **CDN**
 ```js
-import { Lazyload } from "https://cdn.jsdelivr.net/npm/@bitlaab/lazyload@1.0.1/module.js";
+import { Lazyload } from "https://cdn.jsdelivr.net/npm/@bitlaab/lazyload@1.0.2/module.js";
 ```
 
 ---
@@ -74,18 +74,18 @@ options: {
 ## 🖼️ 🎥 media()
 It will load **images** and **videos** when item will enter into the viewport. the method accept 5 parameters of object:
 - **wrapper:** (Optional) - The wrapper of the `srcTarget`. The value of it is `CSS Selector`.  
-**e.g.,** `wrapper: "#image-wrapper"`  
+**e.g.,** `wrapper: "#item-wrapper"`  
 **Note:** If you don't provide the `wrapper` it will select all of the elements with the selector of `srcTarget` from `DOM`, otherwise it will select only from the `wrapper`. You can handle it on your needs.
 
 - **srcTarget:** (Required) - The selector of the elements where the image `src` will be set. The value of it is `CSS Selector`.  
-**e.g.,** `srcTarget: ".lazy-img"`
+**e.g.,** `srcTarget: ".lazy-item"`
 
 - **lazyUrls:** (Optional) - An array of string(image or video url).  
-**e.g.,** `lazyUrls: [ "/demo-1.jpg", "/demo-1.mp4"]`
+**e.g.,** `lazyUrls: [ "/image.jpg", "/video.mp4"]`
 
 - **attr:** (Optional) - An attribute where image url will be set. If you use this parameter, the image url will be set into this attribute of the `srcTarget` element, otherwise it will set `src` attribute with the image url into the `srcTarget` element by default.  
-**e.g.,** `attr: "data-xyz"`. 
-**result** `<img data-xyz="/demo-1.jpg" />`
+**e.g.,** `attr: "data-xyz"`.  
+**result** `<img data-xyz="/image.jpg" />`
 
 - **options:** (Optional) - The configuration of the lazyload. the value of it is an `object` with 3 properties and all are optional.  
 **e.g.,** `options: {root: null, loadBefore: 0, loadAfter: 0}`
@@ -93,12 +93,12 @@ It will load **images** and **videos** when item will enter into the viewport. t
 ### YOU CAN LOAD MEDIA IN TWO WAYS:
 
 ### First Example
-Setting the `image url` into an attribute called `data-lazy-url`
+Setting the `media url` into an attribute called `data-lazy-url`
 
 ```html
 <div id="item-wrapper">
-    <img class="lazy-item" data-lazy-url="/demo-1.jpg"/>
-    <video class="lazy-item" data-lazy-url="/demo-1.mp4"></video>
+    <img class="lazy-item" data-lazy-url="/image.jpg"/>
+    <video class="lazy-item" data-lazy-url="/video.mp4"></video>
 </div>
 ```
 
@@ -134,7 +134,7 @@ const lazyload = new Lazyload();
 lazyload.media({
     wrapper: "#item-wrapper",
     srcTarget: ".lazy-item",
-    lazyUrls: ["/demo-1.jpg", "/demo-1.mp4"],
+    lazyUrls: ["/image.jpg", "/video.mp4"],
     options: { // Most of the time you don't need to set this parameter,
     // the package internally handle it.
     // Only use when you want manual control.
