@@ -39,7 +39,7 @@ import { Lazyload } from "@bitlaab/lazyload";
 
 Or import directly using **CDN**
 ```js
-import { Lazyload } from "https://cdn.jsdelivr.net/npm/@bitlaab/lazyload@1.0.2/module.js";
+import { Lazyload } from "https://cdn.jsdelivr.net/npm/@bitlaab/lazyload@1.0.3/module.js";
 ```
 
 ---
