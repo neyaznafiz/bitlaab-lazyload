@@ -1,6 +1,6 @@
 {
-  "name": "@ashcroft/lazyload",
-  "version": "1.1.1",
+  "name": "@bitlaab/lazyload",
+  "version": "1.0.1",
   "publishConfig": {
     "access": "public"
   },
@@ -14,13 +14,13 @@
     "optimize",
     "neyaznafiz"
   ],
-  "homepage": "https://github.com/neyaznafiz/ashcroft-lazyload#readme",
+  "homepage": "https://github.com/neyaznafiz/bitlaab-lazyload#readme",
   "bugs": {
-    "url": "https://github.com/neyaznafiz/ashcroft-lazyload/issues"
+    "url": "https://github.com/neyaznafiz/bitlaab-lazyload/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/neyaznafiz/ashcroft-lazyload.git"
+    "url": "git+https://github.com/neyaznafiz/bitlaab-lazyload.git"
   },
   "license": "MIT",
   "author": "Neyaz Nafiz",

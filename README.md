@@ -27,19 +27,19 @@ This is a modern, dependency-free vanilla JavaScript utility built on top of the
 ## 📦 Installation
 
 ```bash
-npm install @ashcroft/lazyload@latest
+npm install @bitlaab/lazyload@latest
 ```
 Or
 ```bash
-yarn add @ashcroft/lazyload@latest
+yarn add @bitlaab/lazyload@latest
 ```
 ```js
-import { Lazyload } from "@ashcroft/lazyload";
+import { Lazyload } from "@bitlaab/lazyload";
 ```
 
 Or import directly using **CDN**
 ```js
-import { Lazyload } from "https://cdn.jsdelivr.net/npm/@ashcroft/lazyload@1.1.1/module.js";
+import { Lazyload } from "https://cdn.jsdelivr.net/npm/@bitlaab/lazyload@1.0.1/module.js";
 ```
 
 ---
@@ -186,3 +186,20 @@ lazyload.execute({
 ## 📄 License
 
 **MIT**
+
+---
+
+### Bitlaab's Open Source
+
+Here are some open-source things — Powered by Bitlaab — built with the aim of simplifying technology, enhancing the developer experience, encouraging collaboration, and giving back to the developer community. Everything we build is from our passion for clean code, well-crafted engineering, and a culture of open contribution.
+
+Whether you’re here to learn, use, or contribute — dive in and discover how open source at Bitlaab is helping shape a better tech ecosystem for our fellow programmers and developers.
+
+Checkout our open source:  
+[Bitlaab Blitz](https://github.com/bitlaab-blitz)  
+[Bitlaab Bolt](https://github.com/bitlaab-bolt)
+
+Thank you for taking the time to explore our open-source projects. Your interest, support, and contributions mean a lot to us and help drive our mission of building better, more open technology for the developer community.
+
+**Best Regards**  
+**[www.bitlaab.com](https://bitlaab.com)**
