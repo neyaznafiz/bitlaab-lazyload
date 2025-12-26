@@ -39,7 +39,7 @@ import { Lazyload } from "@bitlaab/lazyload";
 
 Or import directly using **CDN**
 ```js
-import { Lazyload } from "https://cdn.jsdelivr.net/npm/@bitlaab/lazyload@1.0.5/module.js";
+import { Lazyload } from "https://cdn.jsdelivr.net/npm/@bitlaab/lazyload@1.0.6/module.js";
 ```
 
 ▼
@@ -141,7 +141,7 @@ async function fetchPosts() {
     const resp = await fetch(url);
     const arr = await resp.json();
 
-    document.querySelector(".title").textContent = arr[0]
+    document.querySelector(".title").textContent = arr[0].title
 }
 
 // ---------------------------------------------------------------------
